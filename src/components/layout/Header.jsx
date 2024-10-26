@@ -23,10 +23,8 @@ const Header = () => {
           15% OFF EN TODO CON EL CÓDIGO: XX15OFF
         </Typography>
         <Box
-          display={"flex"}
-          gap={2}
-          className={style.flex1}
-          sx={{ justifyContent: "flex-end" }}
+          className={`${style.flex} ${style.flex1} ${style.flexEnd}`}
+          sx={{ gap: 2 }}
         >
           <Box component={"img"} src={userLogo} alt="user logo" />
           <Typography variant="body2">Iniciar sesión</Typography>
@@ -56,30 +54,26 @@ const Header = () => {
       </Box>
       {/* Sección inferior del header */}
       <Box
-        component={"section"}
+        component={"header"}
         className={style.navBottom}
         sx={{ backgroundColor: theme.palette.primary.main }}
       >
         <Typography
           variant="h3"
-          fontWeight={"bold"}
-          sx={{ color: theme.palette.text.light }}
+          sx={{ color: theme.palette.text.light, fontWeight: "bold" }}
         >
           BRAND
         </Typography>
 
         <Box
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"space-between"}
+          className={`${style.flex} ${style.center}`}
+          component={"nav"}
           sx={{ width: "100%" }}
         >
           {/* Center-aligned Typography components */}
           <Box
-            display={"flex"}
-            justifyContent={"center"}
-            gap={2}
-            sx={{ flexGrow: 1 }}
+            className={`${style.flexGrow1} ${style.flex} ${style.center}`}
+            sx={{ gap: 2 }}
           >
             <Typography
               variant="body1"
@@ -124,7 +118,7 @@ const Header = () => {
               BARRAS Y SNACKS
             </Typography>
           </Box>
-          <Box display={"flex"} gap={2}>
+          <Box className={style.flex} gap={2}>
             <Box
               component={"img"}
               src={magnifyingGlass}
