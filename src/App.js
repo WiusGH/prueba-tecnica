@@ -6,7 +6,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Items from "./pages/Items";
-import "./App.css";
 
 function App() {
   return (

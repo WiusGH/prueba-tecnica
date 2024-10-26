@@ -1,8 +1,13 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Stack } from "@mui/material";
+import ItemView from "../components/item-view/ItemView";
 
-const ItemView = () => {
-  return <Box>ProductViewer</Box>;
+const Items = () => {
+  return (
+    <Stack>
+      <ItemView />
+    </Stack>
+  );
 };
 
-export default ItemView;
+export default Items;
