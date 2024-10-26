@@ -16,9 +16,9 @@ const theme = createTheme({
       paper: "#ffffff",
     },
     text: {
-      primary: "#EB00D3",
-      secondary: "#4D525C",
-      dark: "#000000",
+      primary: "#000000",
+      pink: "#EB00D3",
+      gray: "#4D525C",
       light: "#ffffff",
     },
   },

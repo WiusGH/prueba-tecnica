@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0.8%;
+  text-align: center;
+  width: 100%;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+/* Sección inferior del header */
+
+.navBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 0.8%;
+  text-align: center;
+  width: 100%;
+  p {
+    &:hover {
+      color: black;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
