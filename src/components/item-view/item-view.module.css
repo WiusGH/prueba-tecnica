@@ -14,3 +14,16 @@
   gap: 3%;
   padding: 2%;
 }
+
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
