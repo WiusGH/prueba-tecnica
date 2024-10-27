@@ -2,6 +2,12 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import useTheme from "@mui/material/styles/useTheme";
 
+/**
+ * Un componente de etiqueta de descuento.
+ * 
+
+ * @param {number} discount - El porcentaje de descuento.
+ */
 const DiscountTag = ({ discount }) => {
   const theme = useTheme();
   return (

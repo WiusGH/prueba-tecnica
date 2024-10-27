@@ -59,11 +59,11 @@ const Footer = () => {
         sx={{ backgroundColor: theme.palette.primary.main }}
       >
         <Box sx={{ textAlign: "left" }}>
-          <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h4" sx={{ fontSize: "2rem", fontWeight: "700" }}>
             Forma parte de Brand
           </Typography>
-          <Typography variant="body2">
-            Suscríbete a nuestras ofertas y novedades
+          <Typography variant="body2" sx={{ fontWeight: "500" }}>
+            Suscríbete a nuestras ofertas y novedades.
           </Typography>
         </Box>
         <CustomSearchBar />
@@ -87,8 +87,8 @@ const Footer = () => {
           </Box>
         </Box>
         <Box className={style.footerInfo}>
-          <Typography variant="body2">Términos y condiciones</Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">Términos y condiciones</Typography>
+          <Typography variant="body1">
             Brand © Todos los derechos reservados
           </Typography>
         </Box>

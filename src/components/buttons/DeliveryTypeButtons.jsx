@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CircleIcon from "@mui/icons-material/Circle";
+import selectedItemIcon from "../../assets/images/selected-item-icon.svg";
+import unselectedItemIcon from "../../assets/images/unselected-item-icon.svg";
+import movingTruckIcon from "../../assets/images/moving-truck-icon.svg";
+import storeIcon from "../../assets/images/store-icon.svg";
 import { useTheme } from "@mui/material/styles";
 
-const DeliveryTypeButtons = ({
-  set,
-  width,
-  option1Icon,
-  option2Icon,
-  option1Text,
-  option2Text,
-}) => {
+/**
+ * Componente que muestra dos botones para seleccionar un tipo de entrega.
+ * @param {{ set: Function, option1: String, option2: String }} props
+ * @returns {JSX.Element}
+ */
+const DeliveryTypeButtons = ({ set, option1, option2 }) => {
   const [selected, setSelected] = useState(null);
   const theme = useTheme();
 
@@ -21,7 +21,9 @@ const DeliveryTypeButtons = ({
   };
 
   return (
-    <Box sx={{ display: "flex", gap: 2, marginBottom: 2, width }}>
+    <Box
+      sx={{ display: "flex", gap: 2, marginBottom: 2, width: "fit-content" }}
+    >
       <Button
         onClick={() => handleSelect("option1")}
         variant="outlined"
@@ -32,22 +34,29 @@ const DeliveryTypeButtons = ({
           justifyContent: "center",
           border: `2px solid ${theme.palette.primary.main}`,
           gap: 1,
-          padding: "1rem 0.5rem",
+          padding: "0.5rem 1rem",
         }}
       >
         <Box
           component={"img"}
-          src={option1Icon}
+          src={movingTruckIcon}
           alt="ícono de camión"
-          sx={{ width: "20px", height: "20px" }}
+          sx={{ width: "15px", height: "15px" }}
         />
-        <Typography variant="body2" sx={{ color: "black" }}>
-          {option1Text}
+        <Typography
+          variant="body2"
+          sx={{ fontSize: "14px", textTransform: "none" }}
+        >
+          {option1}
         </Typography>
         {selected === "option1" ? (
-          <CheckCircleIcon color="primary" fontSize="small" />
+          <Box component={"img"} src={selectedItemIcon} alt="seleccionado" />
         ) : (
-          <CircleIcon color="disabled" fontSize="small" />
+          <Box
+            component={"img"}
+            src={unselectedItemIcon}
+            alt="no seleccionado"
+          />
         )}
       </Button>
       <Button
@@ -65,15 +74,24 @@ const DeliveryTypeButtons = ({
       >
         <Box
           component={"img"}
-          src={option2Icon}
+          src={storeIcon}
           alt="ícono de tienda"
-          sx={{ width: "20px", height: "20px" }}
+          sx={{ width: "15px", height: "15px" }}
         />
-        <Typography variant="body2">{option2Text}</Typography>
+        <Typography
+          variant="body2"
+          sx={{ fontSize: "14px", textTransform: "none" }}
+        >
+          {option2}
+        </Typography>
         {selected === "option2" ? (
-          <CheckCircleIcon color="primary" fontSize="small" />
+          <Box component={"img"} src={selectedItemIcon} alt="seleccionado" />
         ) : (
-          <CircleIcon color="disabled" fontSize="small" />
+          <Box
+            component={"img"}
+            src={unselectedItemIcon}
+            alt="no seleccionado"
+          />
         )}
       </Button>
     </Box>

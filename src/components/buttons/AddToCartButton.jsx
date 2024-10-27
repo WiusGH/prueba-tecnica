@@ -2,6 +2,14 @@ import { useTheme } from "@emotion/react";
 import { Button } from "@mui/material";
 import React from "react";
 
+/**
+ * Botón personalizable para agregar ítems a un carrito.
+ *
+ * @param {string} color Opciones: "main", "light", o "secondary".
+ * @param {string} text
+ * @param {number} width
+ * @param {function} onClick Función que se ejecuta al hacer clic en el botón.
+ */
 const AddToCartButton = ({ color, text, width, onClick }) => {
   const theme = useTheme();
   let finalColor = {};
@@ -30,6 +38,7 @@ const AddToCartButton = ({ color, text, width, onClick }) => {
       sx={{
         ...finalColor,
         padding: "0.2rem 0",
+        textTransform: "none",
         width: width,
       }}
       onClick={onClick}

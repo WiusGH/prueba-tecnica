@@ -101,7 +101,7 @@
 .footerInfo {
   display: flex;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 2% 3%;
   width: 100%;
 }

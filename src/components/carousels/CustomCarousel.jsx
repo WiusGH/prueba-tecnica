@@ -5,8 +5,27 @@ import Slider from "react-slick";
 import { Box, Typography } from "@mui/material";
 import carouselArrowLeft from "../../assets/images/carousel-arrow-left.svg";
 import carouselArrowRight from "../../assets/images/carousel-arrow-right.svg";
+import DiscountTag from "../buttons/DiscountTag";
 
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Componente que recibe un objeto con los items a mostrar.
+ *
+ * @param {Object[]} items - Lista de items a mostrar.
+ * @param {string} items[].image - Imagen del item.
+ * @param {string} items[].title - Título del item.
+ * @param {string} items[].description - Descripción del item.
+ * @param {number} items[].price - El precio del item.
+ * @param {number} [items[].discount] - El porcentaje de descuento.
+ * @param {boolean} [items[].freeShipping] - Si el item tiene envío gratis(opcional).
+ */
+/******  28023da1-560f-41c5-951b-db6312a3b14f  *******/
 const CustomCarousel = ({ items }) => {
+  const formatPrice = (price) => {
+    const roundedPrice = Math.floor(price);
+    return roundedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -52,7 +71,6 @@ const CustomCarousel = ({ items }) => {
     );
   }
 
-  // Custom Previous Arrow component
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -85,9 +103,14 @@ const CustomCarousel = ({ items }) => {
               padding: 3,
               margin: "0 7rem",
               textAlign: "left",
+              position: "relative",
             }}
           >
-            {/* TODO: agregar tags de descuentos dentro de las imágenes */}
+            {item.discount && (
+              <Box sx={{ position: "absolute", top: 30, left: 30 }}>
+                <DiscountTag discount={item.discount} />
+              </Box>
+            )}
             <Box
               component="img"
               src={item.image}
@@ -115,14 +138,14 @@ const CustomCarousel = ({ items }) => {
                 variant="h5"
                 sx={{ color: "primary.main", fontWeight: "bold", mr: 2 }}
               >
-                ${item.discountedPrice}
+                ${formatPrice(item.price - item.price * (item.discount / 100))}
               </Typography>
               <Typography
                 variant="body1"
                 color="textSecondary"
                 sx={{ textDecoration: "line-through" }}
               >
-                ${item.originalPrice}
+                ${item.price}
               </Typography>
             </Box>
             {item.freeShipping && (

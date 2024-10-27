@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2%;
+  padding: 1%;
 }
 
 .itemViewer {
@@ -19,11 +19,10 @@
   display: flex;
 }
 
-.center {
-  justify-content: center;
-  align-items: center;
-}
-
 .column {
   flex-direction: column;
+}
+
+.spaceBetween {
+  justify-content: space-between;
 }

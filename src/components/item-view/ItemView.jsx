@@ -1,224 +1,184 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../../components/utils/axios";
 import { Box, Divider, Typography } from "@mui/material";
 import style from "./item-view.module.css";
 import wheyProtein100 from "../../assets/images/whey-protein-100.svg";
 import ItemPhotosViewer from "./ItemPhotosViewer";
-import DiscountTag from "../buttons/DiscountTag";
-import { useTheme } from "@mui/material/styles";
-import starIcon from "../../assets/images/star-icon.svg";
-import pencilSquareIcon from "../../assets/images/pencil-square-icon.svg";
 import shakerBottles from "../../assets/images/shaker-bottles.svg";
-import CustomCarousel from "../carousels/CustomCarousel";
-import CustomDropdown from "../dropdown/CustomDropdown";
-import AddToCartButton from "../buttons/AddToCartButton";
-import AmountSelector from "../buttons/AmountSelector";
 import DeliveryTypeButtons from "../buttons/DeliveryTypeButtons";
-import movingTruckIcon from "../../assets/images/moving-truck-icon.svg";
-import storeIcon from "../../assets/images/store-icon.svg";
+import SimilarItems from "./SimilarItems";
+import PriceTag from "./PriceTag";
+import FreeShippingTag from "./FreeShippingTag";
+import ItemOptionsDropdown from "./ItemOptionsDropdown";
+import ItemQuantitySelector from "./ItemQuantitySelector";
+import ItemReviews from "./ItemReviews";
 
-const images = {
-  mainImage: wheyProtein100,
-  restOfImages: [
-    wheyProtein100,
-    wheyProtein100,
-    wheyProtein100,
-    wheyProtein100,
-    wheyProtein100,
-  ],
+// Constante para simular un objeto obtenido de la base de datos
+const item = {
+  brand: "Brand",
+  name: "Whey Protein - Original",
+  price: 71990,
+  discount: 5,
+  freeShipping: true,
+  sku: "1588023425509",
+  description:
+    "Exclusiva fórmula proteica a base de suero de leche aislado e hidrolizado que ha sido cientificamente diseñada para construir músculo magro libre de grasa, aumentar la fuerza y mejorar el rendimiento deportivo.Cada porción ontiene 0 g de proteína y una matriz de aminoácidos de cadena ramificada, glutamina y creatina para acelarar el aumento de músculo y la fuerza.",
+  optionType: "Sabor",
+  optionsList: [],
+  images: {
+    mainImage: wheyProtein100,
+    restOfImages: [
+      wheyProtein100,
+      wheyProtein100,
+      wheyProtein100,
+      wheyProtein100,
+      wheyProtein100,
+    ],
+  },
 };
 
+// Constante para simular un array de objetos obtenidos de la base de datos
 const carouselItems = [
   {
     image: shakerBottles,
     title: "Brand 1",
     description: "Shaker Brand 1 400cc",
-    discountedPrice: "7.990",
-    originalPrice: "9.990",
+    discount: 15,
+    price: 9990,
   },
   {
     image: shakerBottles,
     title: "Brand 2",
     description: "Shaker Brand 2 400cc",
-    discountedPrice: "7.990",
-    originalPrice: "9.990",
+    discount: 5,
+    price: 9990,
     freeShipping: true,
   },
   {
     image: shakerBottles,
     title: "Brand 3",
     description: "Shaker Brand 3 400cc",
-    discountedPrice: "7.990",
-    originalPrice: "9.990",
+    discount: 10,
+    price: 9990,
     freeShipping: true,
   },
   {
     image: shakerBottles,
     title: "Brand 4",
     description: "Shaker Brand 4 400cc",
-    discountedPrice: "7.990",
-    originalPrice: "9.990",
+    discount: 25,
+    price: 9990,
   },
   {
     image: shakerBottles,
     title: "Brand 5",
     description: "Shaker Brand 5 400cc",
-    discountedPrice: "7.990",
-    originalPrice: "9.990",
+    discount: 8,
+    price: 9990,
     freeShipping: true,
   },
 ];
 
-// TODO: Reemplazar esta lista hardcodeada por una llamada a la API
-const sabores = ["Sabor 1", "Sabor 2", "Sabor 3", "Sabor 4", "Sabor 5"];
-
 const ItemView = () => {
-  const theme = useTheme();
+  // Variable para asignar la lista de opciones al objeto "item"
+  const [optionsList, setOptionsList] = useState([]);
+  // Variable booleana para controlar el estado de la carga
+  const [loading, setLoading] = useState(true);
+
+  // Función para obtener la lista de opciones de la base de datos
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get("/sabores");
+        const fetchedOptions = response.data.sabores.map((sabor) => sabor.name);
+        setOptionsList(fetchedOptions);
+      } catch (error) {
+        console.error("Error al obtener lista de opciones:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <Box component={"main"} className={style.container}>
       <Box component={"section"} className={style.itemViewer}>
-        <Box>
-          <Typography variant="body1" sx={{ marginBottom: "2.5rem" }}>
+        {/* Sección izquierda */}
+        <Box
+          className={`${style.flex} ${style.column} ${style.spaceBetween}`}
+          sx={{ height: "100%" }}
+        >
+          <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
             INICIO / PROTEÍNAS / WHEY PROTEIN
           </Typography>
           <ItemPhotosViewer
-            mainImage={images.mainImage}
-            images={images.restOfImages}
+            mainImage={item.images.mainImage}
+            images={item.images.restOfImages}
           />
         </Box>
-        <Box className={style.itemDescription}>
-          <Typography variant="body2" sx={{ marginBottom: "2.5rem" }}>
-            Brand
+        {/* Sección derecha */}
+        <Box
+          component={"section"}
+          className={`${style.flex} ${style.column} ${style.spaceBetween}`}
+          sx={{ height: "100%", gap: 1 }}
+        >
+          <Typography variant="body2">{item.brand}</Typography>
+          <Typography variant="h4" sx={{ fontSize: "2rem", fontWeight: "600" }}>
+            {item.name}
           </Typography>
-          <Box sx={{ margin: "2.5rem 0" }}>
-            <Typography variant="h4">Whey Protein - Original</Typography>
-            <Box className={style.flex} sx={{ gap: 1 }}>
-              <DiscountTag discount="20" />
-              <Typography
-                variant="h5"
-                sx={{ color: theme.palette.primary.main, fontWeight: "bold" }}
-              >
-                $68.390
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={{
-                  color: theme.palette.secondary.main,
-                  fontWeight: "bold",
-                  marginLeft: "1rem",
-                  textDecoration: "line-through",
-                }}
-              >
-                $71.999
-              </Typography>
-            </Box>
-            <Box
-              className={`${style.flex} ${style.Center}`}
-              variant="body2"
-              sx={{
-                backgroundColor: "#00FFF033",
-                border: "1px solid #07706A",
-                color: "#07706A",
-                padding: "2px",
-                height: "fit-content",
-                margin: "1rem 0",
-                width: "fit-content",
-              }}
-            >
-              <Typography variant="body2">ENVÍO GRATIS STGO</Typography>
-            </Box>
+
+          <PriceTag price={item.price} discount={item.discount} />
+          {item.freeShipping && <FreeShippingTag />}
+
+          <Typography
+            variant="body2"
+            sx={{
+              fontSize: "12px",
+              fontWeight: "400",
+              margin: "0.8rem 0.5rem",
+            }}
+          >
+            SKU {item.sku}
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              backgroundColor: "#F5F4F4",
+              padding: "3%",
+            }}
+          >
+            {item.description}
+          </Typography>
+
+          {!loading ? (
+            <ItemOptionsDropdown
+              optionType={item.optionType}
+              optionsList={optionsList}
+            />
+          ) : (
             <Typography variant="body2" sx={{ margin: "1rem 0" }}>
-              SKU 1588023425509
+              Cargando opciones...
             </Typography>
-            <Typography
-              variant="body1"
-              sx={{ backgroundColor: "#F5F4F4", padding: "3%" }}
-            >
-              Exclusiva fórmula proteica a base de suero de leche aislado e
-              hidrolizado que ha sido cientificamente diseñada para construir
-              músculo magro libre de grasa, aumentar la fuerza y mejorar el
-              rendimiento deportivo.Cada porción contiene 30 g de proteína y una
-              matriz de aminoácidos de cadena ramificada, glutamina y creatina
-              para acelarar el aumento de músculo y la fuerza.
-            </Typography>
-            <Typography variant="body1" sx={{ margin: "1rem 0" }}>
-              Sabor:
-            </Typography>
-            <CustomDropdown
-              defaultText="Escoger Sabor"
-              items={sabores}
-              width={"40%"}
-            />
-            <Box className={style.flex} sx={{ gap: 2 }}>
-              <AmountSelector width={"40%"} />
-              <AddToCartButton
-                color="main"
-                text="Agregar al carrito"
-                width={"60%"}
-                onClick={() => {}}
-              />
-            </Box>
-            <Typography variant="body1" sx={{ margin: "1.5rem 0" }}>
-              Tipo de entrega:
-            </Typography>
-            <DeliveryTypeButtons
-              option1Icon={movingTruckIcon}
-              option1Text={"Despacho a domicilio"}
-              option2Icon={storeIcon}
-              option2Text={"Retiro en tienda GRATIS"}
-              set={() => {}}
-              width={"80%"}
-            />
-            <Box className={`${style.flex} ${style.Center}`}>
-              <Typography
-                className={`${style.flex} ${style.Center}`}
-                variant="body1"
-              >
-                12 valoraciones de clientes
-              </Typography>
-              <Typography
-                className={`${style.flex} ${style.Center}`}
-                variant="body1"
-                sx={{ margin: "0 3rem 0 1rem" }}
-              >
-                <Box component={"img"} src={starIcon} /> 4.8
-              </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Typography
-                  className={`${style.flex} ${style.Center}`}
-                  variant="body1"
-                  sx={{ fontWeight: "bold" }}
-                >
-                  <Box
-                    component={"img"}
-                    src={pencilSquareIcon}
-                    sx={{ marginRight: "1rem" }}
-                  />{" "}
-                  Escribir comentario
-                </Typography>
-                <Divider sx={{ border: "1px solid black", width: "100%" }} />
-              </Box>
-            </Box>
-          </Box>
+          )}
+
+          <ItemQuantitySelector />
+
+          <Typography variant="body1">Tipo de entrega:</Typography>
+
+          <DeliveryTypeButtons
+            option1={"Despacho a domicilio"}
+            option2={"Retiro en tienda GRATIS"}
+            set={() => {}}
+          />
+
+          <ItemReviews reviews={12} average={4.8} />
         </Box>
       </Box>
+      {/* Sección inferior */}
       <Divider sx={{ border: "1px solid black", width: "100%" }} />
-      <Box
-        className={`${style.flex} ${style.column} ${style.Center}`}
-        sx={{ width: "100%" }}
-      >
-        <Typography
-          variant="h5"
-          sx={{
-            color: theme.palette.secondary.main,
-            fontWeight: "bold",
-            marginTop: "2rem",
-            textAlign: "center",
-          }}
-        >
-          TE PODRÍA INTERESAR TAMBIÉN
-        </Typography>
-        <CustomCarousel items={carouselItems} />
-      </Box>
+      <SimilarItems carouselItems={carouselItems} />
     </Box>
   );
 };

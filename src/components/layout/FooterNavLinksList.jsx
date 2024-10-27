@@ -14,19 +14,19 @@ const FooterNavLinksList = ({ title, items }) => {
   return (
     <Box sx={{ marginBottom: "2rem" }}>
       <Typography
-        variant="h6"
+        variant="body1"
         sx={{
-          fontWeight: "bold",
+          fontWeight: "700",
           textAlign: "left",
           textDecoration: `underline 2px ${theme.palette.primary.main}`,
-          marginTop: 2,
+          marginTop: 1,
         }}
       >
         {title}
       </Typography>
       <List sx={{ padding: 0 }}>
         {items.map((item, index) => (
-          <ListItem key={index} sx={{ padding: 0, margin: "1rem 0" }}>
+          <ListItem key={index} sx={{ padding: 0, margin: "0.5rem 0" }}>
             {item.icon && (
               <ListItemIcon sx={{ display: "flex", minWidth: 0 }}>
                 {Array.isArray(item.icon) ? (
@@ -57,7 +57,10 @@ const FooterNavLinksList = ({ title, items }) => {
             )}
 
             {item.text && (
-              <ListItemText primary={item.text} sx={{ margin: 0 }} />
+              <ListItemText
+                primary={item.text}
+                sx={{ fontWeight: "500", margin: 0 }}
+              />
             )}
           </ListItem>
         ))}
