@@ -7,7 +7,6 @@ import carouselArrowLeft from "../../assets/images/carousel-arrow-left.svg";
 import carouselArrowRight from "../../assets/images/carousel-arrow-right.svg";
 
 const CustomCarousel = ({ items }) => {
-  // Carousel settings
   const settings = {
     dots: false,
     infinite: true,
@@ -32,8 +31,6 @@ const CustomCarousel = ({ items }) => {
     ],
   };
 
-  // Custom Arrow components
-  // Custom Next Arrow component
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -48,7 +45,7 @@ const CustomCarousel = ({ items }) => {
           display: "block",
           height: "40px",
           width: "40px",
-          right: "-7%", // Adjust right position to add more space
+          right: "-7%",
           "&:hover": { opacity: 0.8 },
         }}
       />
@@ -70,7 +67,7 @@ const CustomCarousel = ({ items }) => {
           display: "block",
           height: "40px",
           width: "40px",
-          left: "-7%", // Adjust left position to add more space
+          left: "-7%",
           "&:hover": { opacity: 0.8 },
         }}
       />
@@ -90,15 +87,13 @@ const CustomCarousel = ({ items }) => {
               textAlign: "left",
             }}
           >
-            {/* Image Section */}
+            {/* TODO: agregar tags de descuentos dentro de las imágenes */}
             <Box
               component="img"
               src={item.image}
               alt={item.title}
               sx={{ width: "100%", height: "60%", objectFit: "cover" }}
             />
-
-            {/* Text Section */}
             <Typography variant="body2" sx={{ margin: "1rem 0 0 1rem" }}>
               {item.title}
             </Typography>
@@ -108,8 +103,6 @@ const CustomCarousel = ({ items }) => {
             >
               {item.description}
             </Typography>
-
-            {/* Pricing Section */}
             <Box
               sx={{
                 display: "flex",
@@ -132,8 +125,6 @@ const CustomCarousel = ({ items }) => {
                 ${item.originalPrice}
               </Typography>
             </Box>
-
-            {/* Free Shipping Tag */}
             {item.freeShipping && (
               <Box
                 variant="body2"

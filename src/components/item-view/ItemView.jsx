@@ -9,6 +9,12 @@ import starIcon from "../../assets/images/star-icon.svg";
 import pencilSquareIcon from "../../assets/images/pencil-square-icon.svg";
 import shakerBottles from "../../assets/images/shaker-bottles.svg";
 import CustomCarousel from "../carousels/CustomCarousel";
+import CustomDropdown from "../dropdown/CustomDropdown";
+import AddToCartButton from "../buttons/AddToCartButton";
+import AmountSelector from "../buttons/AmountSelector";
+import DeliveryTypeButtons from "../buttons/DeliveryTypeButtons";
+import movingTruckIcon from "../../assets/images/moving-truck-icon.svg";
+import storeIcon from "../../assets/images/store-icon.svg";
 
 const images = {
   mainImage: wheyProtein100,
@@ -62,6 +68,8 @@ const carouselItems = [
   },
 ];
 
+const sabores = ["Sabor 1", "Sabor 2", "Sabor 3", "Sabor 4", "Sabor 5"];
+
 const ItemView = () => {
   const theme = useTheme();
   return (
@@ -80,8 +88,8 @@ const ItemView = () => {
           <Typography variant="body2" sx={{ marginBottom: "2.5rem" }}>
             Brand
           </Typography>
-          <Typography variant="h4" sx={{ marginBottom: "2.5rem" }}>
-            Whey Protein - Original
+          <Box sx={{ margin: "2.5rem 0" }}>
+            <Typography variant="h4">Whey Protein - Original</Typography>
             <Box className={style.flex} sx={{ gap: 1 }}>
               <DiscountTag discount="20" />
               <Typography
@@ -111,12 +119,15 @@ const ItemView = () => {
                 color: "#07706A",
                 padding: "2px",
                 height: "fit-content",
+                margin: "1rem 0",
                 width: "fit-content",
               }}
             >
               <Typography variant="body2">ENVÍO GRATIS STGO</Typography>
             </Box>
-            <Typography variant="body2">SKU 1588023425509</Typography>
+            <Typography variant="body2" sx={{ margin: "1rem 0" }}>
+              SKU 1588023425509
+            </Typography>
             <Typography
               variant="body1"
               sx={{ backgroundColor: "#F5F4F4", padding: "3%" }}
@@ -128,8 +139,34 @@ const ItemView = () => {
               matriz de aminoácidos de cadena ramificada, glutamina y creatina
               para acelarar el aumento de músculo y la fuerza.
             </Typography>
-            <Typography variant="body1">Sabor:</Typography>
-            <Typography variant="body1">tipo de entrega:</Typography>
+            <Typography variant="body1" sx={{ margin: "1rem 0" }}>
+              Sabor:
+            </Typography>
+            <CustomDropdown
+              defaultText="Escoger Sabor"
+              items={sabores}
+              width={"40%"}
+            />
+            <Box className={style.flex} sx={{ gap: 2 }}>
+              <AmountSelector width={"40%"} />
+              <AddToCartButton
+                color="main"
+                text="Agregar al carrito"
+                width={"60%"}
+                onClick={() => {}}
+              />
+            </Box>
+            <Typography variant="body1" sx={{ margin: "1.5rem 0" }}>
+              Tipo de entrega:
+            </Typography>
+            <DeliveryTypeButtons
+              option1Icon={movingTruckIcon}
+              option1Text={"Despacho a domicilio"}
+              option2Icon={storeIcon}
+              option2Text={"Retiro en tienda GRATIS"}
+              set={() => {}}
+              width={"80%"}
+            />
             <Box className={`${style.flex} ${style.Center}`}>
               <Typography
                 className={`${style.flex} ${style.Center}`}
@@ -144,16 +181,23 @@ const ItemView = () => {
               >
                 <Box component={"img"} src={starIcon} /> 4.8
               </Typography>
-              <Typography
-                className={`${style.flex} ${style.Center}`}
-                variant="body1"
-                sx={{ width: "30%" }}
-              >
-                <Box component={"img"} src={pencilSquareIcon} /> Escribir
-                comentario
-              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography
+                  className={`${style.flex} ${style.Center}`}
+                  variant="body1"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  <Box
+                    component={"img"}
+                    src={pencilSquareIcon}
+                    sx={{ marginRight: "1rem" }}
+                  />{" "}
+                  Escribir comentario
+                </Typography>
+                <Divider sx={{ border: "1px solid black", width: "100%" }} />
+              </Box>
             </Box>
-          </Typography>
+          </Box>
         </Box>
       </Box>
       <Divider sx={{ border: "1px solid black", width: "100%" }} />
