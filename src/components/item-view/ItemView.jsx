@@ -68,6 +68,7 @@ const carouselItems = [
   },
 ];
 
+// TODO: Reemplazar esta lista hardcodeada por una llamada a la API
 const sabores = ["Sabor 1", "Sabor 2", "Sabor 3", "Sabor 4", "Sabor 5"];
 
 const ItemView = () => {
