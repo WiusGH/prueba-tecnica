@@ -6,6 +6,7 @@ import { Box, Typography } from "@mui/material";
 import carouselArrowLeft from "../../assets/images/carousel-arrow-left.svg";
 import carouselArrowRight from "../../assets/images/carousel-arrow-right.svg";
 import DiscountTag from "../buttons/DiscountTag";
+import shoppingCartGrayBg from "../../assets/images/shopping-cart-graybg.svg";
 
 /**
  * Componente que recibe un objeto con los items a mostrar.
@@ -93,7 +94,7 @@ const CustomCarousel = ({ items }) => {
   }
 
   return (
-    <Box sx={{ width: "90%", margin: "0 auto", p: 4 }}>
+    <Box sx={{ width: "90%", margin: "0 auto", padding: "0 2rem" }}>
       <Slider {...settings} sx={{ width: "100%" }}>
         {items.map((item, index) => (
           <Box
@@ -112,6 +113,16 @@ const CustomCarousel = ({ items }) => {
                 <DiscountTag discount={item.discount} />
               </Box>
             )}
+            <Box
+              component={"img"}
+              src={shoppingCartGrayBg}
+              sx={{
+                position: "absolute",
+                top: 30,
+                right: 30,
+                "&:hover": { cursor: "pointer" },
+              }}
+            />
             <Box
               component="img"
               src={item.image}

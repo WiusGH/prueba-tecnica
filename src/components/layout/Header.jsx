@@ -162,7 +162,7 @@ const Header = () => {
         className={style.navTop}
         sx={{ backgroundColor: theme.palette.tertiary.main }}
       >
-        <Box className={style.flex}>
+        <Box className={style.flex1}>
           {isMobile && (
             <IconButton
               color="inherit"
@@ -199,19 +199,40 @@ const Header = () => {
       {/* Sección inferior del header */}
       <Box
         component={"header"}
-        className={style.navBottom}
+        className={`${style.navBottom}`}
         sx={{ backgroundColor: theme.palette.primary.main }}
       >
+        <Box></Box>
         <Typography
           variant="h3"
           sx={{
             color: theme.palette.text.light,
             fontWeight: "bold",
-            padding: 1,
+            fontSize: "40px",
           }}
         >
           BRAND
         </Typography>
+        {isMobile && (
+          <Box className={`${style.flex} ${style.center}`}>
+            <Box
+              component={"img"}
+              src={magnifyingGlass}
+              alt="magnifying glass icon"
+              sx={{
+                cursor: "pointer",
+                marginRight: "0.5rem",
+                "&:hover": { scale: "1.2" },
+              }}
+            />
+            <Box
+              component={"img"}
+              src={shoppingCart}
+              alt="shopping cart icon"
+              sx={{ cursor: "pointer", "&:hover": { scale: "1.2" } }}
+            />
+          </Box>
+        )}
         {isMobile ? null : (
           <Box
             className={`${style.flex} ${style.center}`}

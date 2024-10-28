@@ -19,7 +19,7 @@ const DiscountTag = ({ discount }) => {
         backgroundColor: theme.palette.primary.main,
         borderRadius: "8px",
         color: "white",
-        padding: "10px",
+        padding: "5px 30px",
         width: "70px",
       }}
     >

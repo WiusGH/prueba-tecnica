@@ -17,12 +17,11 @@ const ItemReviews = ({ reviews, average }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          fontWeight: "700",
         }}
       >
-        <span style={{ fontWeight: "700", marginRight: "0.5rem" }}>
-          {reviews}
-        </span>{" "}
-        valoraciones de clientes
+        <span style={{ marginRight: "0.5rem" }}>{reviews}</span> valoraciones de
+        clientes
       </Typography>
       <Typography
         variant="body1"
@@ -30,6 +29,8 @@ const ItemReviews = ({ reviews, average }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          fontSize: "14px",
+          fontWeight: "700",
           marginLeft: "0.7rem",
         }}
       >

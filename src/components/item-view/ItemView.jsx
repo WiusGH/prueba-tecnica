@@ -22,7 +22,7 @@ const item = {
   freeShipping: true,
   sku: "1588023425509",
   description:
-    "Exclusiva fórmula proteica a base de suero de leche aislado e hidrolizado que ha sido cientificamente diseñada para construir músculo magro libre de grasa, aumentar la fuerza y mejorar el rendimiento deportivo.Cada porción ontiene 0 g de proteína y una matriz de aminoácidos de cadena ramificada, glutamina y creatina para acelarar el aumento de músculo y la fuerza.",
+    "Exclusiva fórmula proteica a base de suero de leche aislado e hidrolizado que ha sido científicamente diseñada para construir músculo magro libre de grasa, aumentar la fuerza y mejorar el rendimiento deportivo. Cada porción contiene 0g de proteína y una matriz de aminoácidos de cadena ramificada, glutamina y creatina para acelerar el aumento de músculo y la fuerza.",
   optionType: "Sabor",
   optionsList: [],
   images: {
@@ -109,7 +109,7 @@ const ItemView = () => {
           className={`${style.flex} ${style.column} ${style.spaceBetween}`}
           sx={{ height: "100%" }}
         >
-          <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
+          <Typography variant="body1" sx={{ marginBottom: "2rem" }}>
             INICIO / PROTEÍNAS / WHEY PROTEIN
           </Typography>
           <ItemPhotosViewer

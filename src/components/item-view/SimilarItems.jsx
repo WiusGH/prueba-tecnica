@@ -18,7 +18,7 @@ const SimilarItems = ({ carouselItems }) => {
         variant="h5"
         sx={{
           color: theme.palette.secondary.main,
-          fontWeight: "bold",
+          fontWeight: "600",
           marginTop: "2rem",
           textAlign: "center",
         }}
