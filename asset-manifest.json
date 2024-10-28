@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/prueba-tecnica/static/css/main.8fead6e1.css",
+    "main.js": "/prueba-tecnica/static/js/main.0d4acd34.js",
+    "static/js/453.5d7379ac.chunk.js": "/prueba-tecnica/static/js/453.5d7379ac.chunk.js",
+    "static/media/shaker-bottles.svg": "/prueba-tecnica/static/media/shaker-bottles.6fe00a822dd1d2f8cf97120a58978ee0.svg",
+    "static/media/whey-protein-100.svg": "/prueba-tecnica/static/media/whey-protein-100.15d96ad7a8d824e548571c354b596849.svg",
+    "static/media/logo192.png": "/prueba-tecnica/static/media/logo192.4ca9646d3e4fbbcf40d7.png",
+    "static/media/messages-icon.svg": "/prueba-tecnica/static/media/messages-icon.0958fc405b92cee1650ea5d75491ac46.svg",
+    "static/media/moving-truck-icon.svg": "/prueba-tecnica/static/media/moving-truck-icon.0b949c595059d530c925940a98310533.svg",
+    "static/media/slick.svg": "/prueba-tecnica/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/prueba-tecnica/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/whatsapp-icon.svg": "/prueba-tecnica/static/media/whatsapp-icon.9ae09504f6ab518b888c79c635652b33.svg",
+    "static/media/pencil-square-icon.svg": "/prueba-tecnica/static/media/pencil-square-icon.a24089a9971dfee49c02535672f48c96.svg",
+    "static/media/instagram-icon.svg": "/prueba-tecnica/static/media/instagram-icon.33b28d673b0a1928e9b59877f04c2bf3.svg",
+    "static/media/slick.ttf": "/prueba-tecnica/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/shopping-cart-icon.svg": "/prueba-tecnica/static/media/shopping-cart-icon.4a4d313ec4e187b242255caf74791025.svg",
+    "static/media/slick.woff": "/prueba-tecnica/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/mag-glass-icon.svg": "/prueba-tecnica/static/media/mag-glass-icon.11c8bd6691e7f48f6fd89753b7e851eb.svg",
+    "static/media/truck-icon.svg": "/prueba-tecnica/static/media/truck-icon.2c9d19e61f3be93244969fc07303da51.svg",
+    "static/media/star-icon.svg": "/prueba-tecnica/static/media/star-icon.61da53998b8335ce4b4617f5fd2331f5.svg",
+    "static/media/shopping-bag-icon.svg": "/prueba-tecnica/static/media/shopping-bag-icon.49c88250a8fb811d8146210bd72c33ff.svg",
+    "static/media/facebook-icon.svg": "/prueba-tecnica/static/media/facebook-icon.2df1200fca349a7d666ed567871a01af.svg",
+    "index.html": "/prueba-tecnica/index.html",
+    "static/media/store-icon.svg": "/prueba-tecnica/static/media/store-icon.d4244bfe24a77f3971c8f4156c3ea68f.svg",
+    "static/media/location-icon.svg": "/prueba-tecnica/static/media/location-icon.677bbed7329c46342023003e4df94ad0.svg",
+    "static/media/carousel-arrow-left.svg": "/prueba-tecnica/static/media/carousel-arrow-left.ef3ba1ba7d31bd0b156e44c56d657675.svg",
+    "static/media/user-icon.svg": "/prueba-tecnica/static/media/user-icon.e269bf340211b0b15500ba11c5c03ab2.svg",
+    "static/media/carousel-arrow-right.svg": "/prueba-tecnica/static/media/carousel-arrow-right.ee75090ccd1c592ce8c29003313ef6da.svg",
+    "static/media/arrow-up.svg": "/prueba-tecnica/static/media/arrow-up.0773813ed22eb7167886912ac7165b56.svg",
+    "static/media/arrow-down.svg": "/prueba-tecnica/static/media/arrow-down.7e9792af0eb8ffc658d26ba9c5770429.svg",
+    "static/media/selected-item-icon.svg": "/prueba-tecnica/static/media/selected-item-icon.ed4675af63b321d2033851e617ba53a9.svg",
+    "static/media/unselected-item-icon.svg": "/prueba-tecnica/static/media/unselected-item-icon.826b63cbdbd6f52bfb607c2515ac5ed1.svg",
+    "main.8fead6e1.css.map": "/prueba-tecnica/static/css/main.8fead6e1.css.map",
+    "main.0d4acd34.js.map": "/prueba-tecnica/static/js/main.0d4acd34.js.map",
+    "453.5d7379ac.chunk.js.map": "/prueba-tecnica/static/js/453.5d7379ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fead6e1.css",
+    "static/js/main.0d4acd34.js"
+  ]
+}
