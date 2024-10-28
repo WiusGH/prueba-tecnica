@@ -47,21 +47,12 @@ const Header = () => {
           alt="user logo"
           sx={{ cursor: "pointer", width: "30px", "&:hover": { scale: "1.2" } }}
         />
-        <Typography variant="body1" sx={{ color: "white", margin: "auto" }}>
+        <Typography
+          variant="body1"
+          sx={{ color: "white", margin: "auto 0 auto 1rem" }}
+        >
           BRAND
         </Typography>
-        <Box
-          component={"img"}
-          src={magnifyingGlass}
-          alt="magnifying glass icon"
-          sx={{ cursor: "pointer", "&:hover": { scale: "1.2" } }}
-        />
-        <Box
-          component={"img"}
-          src={shoppingCart}
-          alt="shopping cart icon"
-          sx={{ cursor: "pointer", "&:hover": { scale: "1.2" } }}
-        />
       </Box>
       <Divider />
 
@@ -162,7 +153,7 @@ const Header = () => {
         className={style.navTop}
         sx={{ backgroundColor: theme.palette.tertiary.main }}
       >
-        <Box className={style.flex1}>
+        <Box>
           {isMobile && (
             <IconButton
               color="inherit"
