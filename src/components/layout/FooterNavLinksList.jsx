@@ -12,7 +12,12 @@ import useTheme from "@mui/material/styles/useTheme";
 const FooterNavLinksList = ({ title, items }) => {
   const theme = useTheme();
   return (
-    <Box sx={{ marginBottom: "2rem" }}>
+    <Box
+      sx={{
+        marginBottom: "2rem",
+        "@media (max-width: 600px)": { marginBottom: 0 },
+      }}
+    >
       <Typography
         variant="body1"
         sx={{
@@ -26,7 +31,14 @@ const FooterNavLinksList = ({ title, items }) => {
       </Typography>
       <List sx={{ padding: 0 }}>
         {items.map((item, index) => (
-          <ListItem key={index} sx={{ padding: 0, margin: "0.5rem 0" }}>
+          <ListItem
+            key={index}
+            sx={{
+              cursor: "pointer",
+              padding: 0,
+              margin: "0.5rem 0",
+            }}
+          >
             {item.icon && (
               <ListItemIcon sx={{ display: "flex", minWidth: 0 }}>
                 {Array.isArray(item.icon) ? (
@@ -59,7 +71,11 @@ const FooterNavLinksList = ({ title, items }) => {
             {item.text && (
               <ListItemText
                 primary={item.text}
-                sx={{ fontWeight: "500", margin: 0 }}
+                sx={{
+                  fontWeight: "500",
+                  margin: 0,
+                  "&:hover": { textDecoration: "underline" },
+                }}
               />
             )}
           </ListItem>

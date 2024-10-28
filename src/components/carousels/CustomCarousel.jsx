@@ -7,7 +7,6 @@ import carouselArrowLeft from "../../assets/images/carousel-arrow-left.svg";
 import carouselArrowRight from "../../assets/images/carousel-arrow-right.svg";
 import DiscountTag from "../buttons/DiscountTag";
 
-/*************  ✨ Codeium Command ⭐  *************/
 /**
  * Componente que recibe un objeto con los items a mostrar.
  *
@@ -19,7 +18,6 @@ import DiscountTag from "../buttons/DiscountTag";
  * @param {number} [items[].discount] - El porcentaje de descuento.
  * @param {boolean} [items[].freeShipping] - Si el item tiene envío gratis(opcional).
  */
-/******  28023da1-560f-41c5-951b-db6312a3b14f  *******/
 const CustomCarousel = ({ items }) => {
   const formatPrice = (price) => {
     const roundedPrice = Math.floor(price);
@@ -66,6 +64,7 @@ const CustomCarousel = ({ items }) => {
           width: "40px",
           right: "-7%",
           "&:hover": { opacity: 0.8 },
+          "@media (max-width: 960px)": { right: "-16%" },
         }}
       />
     );
@@ -87,6 +86,7 @@ const CustomCarousel = ({ items }) => {
           width: "40px",
           left: "-7%",
           "&:hover": { opacity: 0.8 },
+          "@media (max-width: 960px)": { left: "-16%" },
         }}
       />
     );
@@ -104,6 +104,7 @@ const CustomCarousel = ({ items }) => {
               margin: "0 7rem",
               textAlign: "left",
               position: "relative",
+              "@media (max-width: 960px)": { margin: 0 },
             }}
           >
             {item.discount && (

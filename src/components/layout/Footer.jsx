@@ -58,7 +58,12 @@ const Footer = () => {
         className={style.footerTop}
         sx={{ backgroundColor: theme.palette.primary.main }}
       >
-        <Box sx={{ textAlign: "left" }}>
+        <Box
+          sx={{
+            textAlign: "left",
+            "@media (max-width: 600px)": { textAlign: "center" },
+          }}
+        >
           <Typography variant="h4" sx={{ fontSize: "2rem", fontWeight: "700" }}>
             Forma parte de Brand
           </Typography>
@@ -87,8 +92,22 @@ const Footer = () => {
           </Box>
         </Box>
         <Box className={style.footerInfo}>
-          <Typography variant="body1">Términos y condiciones</Typography>
-          <Typography variant="body1">
+          <Typography
+            variant="body1"
+            sx={{
+              cursor: "pointer",
+              "&:hover": { textDecoration: "underline" },
+            }}
+          >
+            Términos y condiciones
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              cursor: "pointer",
+              "&:hover": { textDecoration: "underline" },
+            }}
+          >
             Brand © Todos los derechos reservados
           </Typography>
         </Box>

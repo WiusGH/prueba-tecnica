@@ -31,6 +31,9 @@ const CustomSearchBar = () => {
         justifyContent: "center",
         width: "100%",
         maxWidth: "50%",
+        "@media (max-width: 768px)": {
+          maxWidth: "80%",
+        },
       }}
     >
       <TextField

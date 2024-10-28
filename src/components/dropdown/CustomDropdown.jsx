@@ -46,6 +46,9 @@ const CustomDropdown = ({
         margin: "2rem 1rem",
         padding: "0.3rem 0",
         width: `${width}`,
+        "@media (max-width: 600px)": {
+          width: "60%",
+        },
       }}
     >
       <Box>

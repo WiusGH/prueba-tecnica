@@ -22,7 +22,17 @@ const DeliveryTypeButtons = ({ set, option1, option2 }) => {
 
   return (
     <Box
-      sx={{ display: "flex", gap: 2, marginBottom: 2, width: "fit-content" }}
+      sx={{
+        display: "flex",
+        gap: 2,
+        marginBottom: 2,
+        width: "fit-content",
+        "@media (max-width: 600px)": {
+          gap: 1,
+          flexDirection: "column",
+          width: "100%",
+        },
+      }}
     >
       <Button
         onClick={() => handleSelect("option1")}
