@@ -164,6 +164,9 @@ const Header = () => {
             </IconButton>
           )}
         </Box>
+
+        {!isMobile && <Box className={style.flex1}></Box>}
+
         <Typography variant="body2" className={style.flex1}>
           15% OFF EN TODO CON EL CÓDIGO: XX15OFF
         </Typography>
@@ -193,9 +196,10 @@ const Header = () => {
         className={`${style.navBottom}`}
         sx={{ backgroundColor: theme.palette.primary.main }}
       >
-        <Box></Box>
+        <Box className={style.flex1}></Box>
         <Typography
           variant="h3"
+          className={`${style.flex1}`}
           sx={{
             color: theme.palette.text.light,
             fontWeight: "bold",
@@ -205,7 +209,9 @@ const Header = () => {
           BRAND
         </Typography>
         {isMobile && (
-          <Box className={`${style.flex} ${style.center}`}>
+          <Box
+            className={`${style.flex} ${style.flex1} ${style.flexEnd} ${style.center}`}
+          >
             <Box
               component={"img"}
               src={magnifyingGlass}
