@@ -6,6 +6,7 @@ const ItemPhotosViewer = ({ mainImage, images }) => {
 
   return (
     <Box>
+      {/* Main Image */}
       <Box
         component="img"
         src={mainImage}
@@ -17,10 +18,10 @@ const ItemPhotosViewer = ({ mainImage, images }) => {
         }}
       />
 
-      {/* Additional Images */}
-      <Grid container spacing={1}>
+      {/* Additional Images in a Row */}
+      <Grid container sx={{ justifyContent: "space-between" }}>
         {images.slice(0, 2).map((image, index) => (
-          <Grid item xs={4} key={index}>
+          <Grid item xs={4} key={index} sx={{ width: "30%" }}>
             <Box
               component="img"
               src={image}
@@ -33,7 +34,7 @@ const ItemPhotosViewer = ({ mainImage, images }) => {
           </Grid>
         ))}
         {extraImagesCount > 0 && (
-          <Grid item xs={4}>
+          <Grid item xs={4} sx={{ width: "30%" }}>
             <Box
               sx={{
                 width: "100%",

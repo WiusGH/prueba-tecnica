@@ -16,6 +16,7 @@ import unselectedItemIcon from "../../assets/images/unselected-item-icon.svg";
 import movingTruckIcon from "../../assets/images/moving-truck-icon.svg";
 import storeIcon from "../../assets/images/store-icon.svg";
 import { useTheme } from "@mui/material/styles";
+import { regions } from "../data/regionsAndCommunes";
 
 const DeliveryTypeButtons = ({ set, option1, option2 }) => {
   const [selected, setSelected] = useState(null);
@@ -55,21 +56,27 @@ const DeliveryTypeButtons = ({ set, option1, option2 }) => {
     setDropdown2Value("");
   };
 
-  const dropdown1Options = ["Santiago", "Valparaíso", "Pucón"];
-  const dropdown2Options =
-    dropdown1Value === "Santiago"
-      ? ["Santiago A", "Santiago B", "Santiago C"]
-      : dropdown1Value === "Valparaíso"
-      ? ["Valparaíso A", "Valparaíso B", "Valparaíso C"]
-      : ["Pucón A", "Pucón B", "Pucón C"];
+  const dropdown1Options = [
+    "Metropolitana de Santiago",
+    ...regions
+      .map((region) => Object.keys(region)[0])
+      .filter((region) => region !== "Metropolitana de Santiago")
+      .sort(),
+  ];
+  const dropdown2Options = dropdown1Value
+    ? Object.values(
+        regions.find((region) => Object.keys(region)[0] === dropdown1Value) ||
+          {}
+      )[0]
+    : [];
 
   const itemList =
     dropdown1Value && dropdown2Value
       ? [
-          `Opcion basada en ${dropdown1Value} y ${dropdown2Value}`,
-          `Otra opcion basada en ${dropdown1Value} y ${dropdown2Value}`,
-          `Otra opcion basada en ${dropdown1Value} y ${dropdown2Value}`,
-          `Otra opcion basada en ${dropdown1Value} y ${dropdown2Value}`,
+          `Opción basada en ${dropdown1Value} y ${dropdown2Value}`,
+          `Otra opción basada en ${dropdown1Value} y ${dropdown2Value}`,
+          `Otra opción basada en ${dropdown1Value} y ${dropdown2Value}`,
+          `Otra opción basada en ${dropdown1Value} y ${dropdown2Value}`,
         ]
       : [];
 
