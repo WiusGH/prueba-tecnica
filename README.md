@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Prueba Técnica de Better Commerce hecha por Wilscónidel Yánez
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La prueba consiste en recrear un diseño hecho en Figma sobre una página para visualizar productos de un e-commerce y consumir una API sencilla, la cual deberá incluirse en un elemento "select" dentro de la página.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Requisitos de la Prueba
 
-### `npm start`
+- Ser fiel al diseño en Figma.
+- Debe ser responsivo.
+- Debe entregarse en un repositorio GIT.
+- No es excluyente entregar el proyecto completo, pero sí bien ordenado, desarrollado y funcionando.
+- Desplegar en alguna plataforma (opcional).
+- Utilizar React Js y Material UI (opcional).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ¿Cómo Abordé el Proyecto?
 
-### `npm test`
+Analicé los requisitos y el diseño en Figma, e hice un listado de las características que debía implementar y los extras que podía incluir.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Características Relacionadas a los Requisitos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Ya que el diseño en Figma no incluye una vista mobile, debo adaptarlo de manera que se vea bien (UI) y no disminuya la experiencia de usuario (UX).
+- Debo utilizar un "hook useEffect" para hacer la solicitud al endpoint tan pronto cargue la página.
+- Debo crear un componente de tipo "modal" para visualizar las opciones al seleccionar el tipo de entrega de producto.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Características Extra
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Oculté la barra de navegación en modo mobile y abrí un menú desplegable al presionar un botón de tipo "hamburguesa".
+- Hice que el usuario pueda agrandar las imágenes del producto y cambiar a la siguiente o la anterior imagen.
+- Hice que la lista de comunas al seleccionar el tipo de envío no se pueda seleccionar sin antes elegir una región, ya que las opciones de esta dependen de la selección anterior.
+- Hice que el componente tipo "slider" en la sección de "Te podría interesar también" sea funcional y reciba una lista de productos con diferentes imágenes, valores y opciones como "envío gratis".
+- Hice que el componente principal y demás componentes hijos sean modulares, es decir, que puedan recibir información de la base de datos y mostrar diferentes imágenes, valores y extras (como la etiqueta de envío gratis) de manera dinámica.
+- Hice que tanto el componente principal como el componente de tipo "slider" pudiesen recibir los valores "costo" y "descuento", los cuales se utilizan para obtener y mostrar dinámicamente el precio original, el precio con descuento y el porcentaje de descuento.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Despliegue en Línea
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La aplicación está disponible para su visualización en Vercel:  
+[https://prueba-tecnica-silk.vercel.app/](https://prueba-tecnica-silk.vercel.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Instalación
 
-## Learn More
+1. **Clona el repositorio**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   git clone [https://github.com/WiusGH/prueba-tecnica.git](https://github.com/WiusGH/prueba-tecnica.git)
+   
+2. **Navega a la carpeta del proyecto**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   cd tu-repositorio
 
-### Code Splitting
+3. **Instala las dependencias**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   npm install
+   
+4. **Inicia la aplicación**:
 
-### Analyzing the Bundle Size
+   npm start
+   
+## Conclusión
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   Este proyecto no solo cumple con los requisitos de la prueba, sino que también incluye componentes adicionales y una estructura modular que mejora la legibilidad, mantenibilidad y escalabilidad del código.
