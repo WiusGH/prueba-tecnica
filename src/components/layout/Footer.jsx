@@ -84,7 +84,7 @@ const Footer = () => {
           <FooterNavLinksList title="Mi cuenta" items={miCuenta} />
           <FooterNavLinksList title="Sobre nosotros" items={sobreNostros} />
           <Box>
-            <FooterNavLinksList title="Contactanos" items={contactanos} />
+            <FooterNavLinksList title="Contáctanos" items={contactanos} />
             <FooterNavLinksList
               title="Síguenos en redes sociales"
               items={redesSociales}
