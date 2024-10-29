@@ -20,7 +20,7 @@ const ItemPhotosViewer = ({ mainImage, images }) => {
   };
 
   return (
-    <Box>
+    <Box sx={{ userSelect: "none" }}>
       {/* Imagen principal */}
       <Box
         component="img"
