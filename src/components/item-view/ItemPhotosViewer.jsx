@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import React from "react";
 
 const ItemPhotosViewer = ({ mainImage, images }) => {

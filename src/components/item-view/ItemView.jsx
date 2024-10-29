@@ -35,6 +35,8 @@ const item = {
       wheyProtein100,
     ],
   },
+  reviews: 12,
+  average: 4.8,
 };
 
 // Constante para simular un array de objetos obtenidos de la base de datos
@@ -124,7 +126,8 @@ const ItemView = () => {
           sx={{ height: "100%", gap: 1 }}
         >
           <Typography variant="body2">{item.brand}</Typography>
-          <Typography variant="h4" sx={{ fontSize: "2rem", fontWeight: "600" }}>
+          {/* Se utiliza H1 para que el S.E.O. sepa que es el nombre del producto */}
+          <Typography variant="h1" sx={{ fontSize: "2rem", fontWeight: "600" }}>
             {item.name}
           </Typography>
 
@@ -173,7 +176,7 @@ const ItemView = () => {
             set={() => {}}
           />
 
-          <ItemReviews reviews={12} average={4.8} />
+          <ItemReviews reviews={item.reviews} average={item.average} />
         </Box>
       </Box>
       {/* Sección inferior */}
