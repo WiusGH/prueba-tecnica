@@ -32,7 +32,7 @@ const item = {
       wheyProtein100,
       wheyProtein100,
       wheyProtein100,
-      wheyProtein100,
+      shakerBottles, // Agregado solo para mostrar que las flechas del modal funcionan
     ],
   },
   reviews: 12,
