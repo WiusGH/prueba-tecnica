@@ -48,8 +48,8 @@ const Header = () => {
           sx={{ cursor: "pointer", width: "30px", "&:hover": { scale: "1.2" } }}
         />
         <Typography
-          variant="body1"
-          sx={{ color: "white", margin: "auto 0 auto 1rem" }}
+          variant="h6"
+          sx={{ color: "white", fontWeight: "700", margin: "auto 0 auto 1rem" }}
         >
           BRAND
         </Typography>
